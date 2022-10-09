@@ -7,10 +7,6 @@
  */
 
 /*
- * TODO: Create a public class named CrossbodyBag which is a subclass of Bag
- *       In addition to the attributes in Bag, the CrossbodyBag should have an
- *       attribute named "numberOfStraps".
- *
  *       The constructor for CrossbodyBag should take the following parameters
  *       in order:
  *           1. a String for the color
@@ -30,3 +26,35 @@
  *
  *       See the tests in test/CrossBodyBagTest.java for examples.
  */
+public class CrossbodyBag extends Bag {
+
+    /**
+     * Creates a new CrossbodyBag with the given color and
+     * capacity.
+     *
+     * @param color
+     * @param capacity
+     * @param numberOfStraps
+     */
+    private int numberOfStraps;
+
+    public CrossbodyBag(String givenColor, int givenCapacity, int numStraps) {
+
+        super(givenColor, givenCapacity);
+        numberOfStraps = numStraps;
+    }
+
+    public int getNumberOfStraps() {
+        return numberOfStraps;
+    }
+
+    public void enhance() {
+        super.increaseCapacity(2);
+    }
+
+    public String toString() {
+        return this.getColor() + " Crossbody Bag with " + numberOfStraps + " straps (" + this.getNumberOfContents() + " / " +
+                this.getCapacity() + ")";
+    }
+
+}
