@@ -21,7 +21,7 @@ public abstract class Bag {
         color = colorInput;
         numberOfContents = 0;
         capacity = capacityInput;
-        contents = new String[0];
+        contents = new String[capacity];
     }
 
     public String getColor() {
@@ -40,7 +40,6 @@ public abstract class Bag {
     public void setColor(String newColor){
         this.color = newColor;
     }
-
 
     /*
      *       This method should return true if the item was added
@@ -68,7 +67,7 @@ public abstract class Bag {
     /**
      * If there are no items in this Bag, return null.
      *
-     * @return
+     * @return items in Bag
      */
     public String popItem() {
         if (numberOfContents == 0) {
